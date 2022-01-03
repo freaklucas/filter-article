@@ -1,19 +1,52 @@
 <template>
-  <h1>{{ msg }}</h1>
-  <button @click="count++">count is: {{ count }}</button>
-  <p>Edit <code>components/HelloWorld.vue</code> to test hot module replacement.</p>
+  <div>
+    <h2>Filter LearnVue Articles</h2>
+    <input type="text" placeholder="Filter Search" v-model="query" />
+    <button @click="reset">Reset</button>
+    <br />
+    <SearchResults :query="query" />
+  </div>
 </template>
 
 <script>
+import { ref } from "vue";
+
+import SearchResults from "./SearchResults.vue";
+
 export default {
-  name: 'HelloWorld',
-  props: {
-    msg: String
+  name: "HelloWorld",
+  components: {
+    SearchResults,
   },
-  data() {
+  setup() {
+    const query = ref("");
+
+    const reset = (event) => {
+      query.value = "";
+    };
+
     return {
-      count: 0
-    }
-  }
-}
+      query,
+      reset,
+    };
+  },
+};
 </script>
+
+<style>
+button {
+  margin: 12px;
+  font-size: 12px;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 100;
+  height: 30px;
+  width: 4%;
+}
+input:hover {
+  background-color: #d3d3d3;
+}
+input {
+  width: 20%;
+  height: 30px;
+}
+</style>
