@@ -34,19 +34,14 @@ export default {
 </script>
 
 <style>
+input[type="text"] {
+  margin-bottom: 20px;
+  padding: 10px;
+}
 button {
-  margin: 12px;
-  font-size: 12px;
-  font-family: "Courier New", Courier, monospace;
-  font-weight: 100;
-  height: 30px;
+  margin: 10px;
   width: 4%;
-}
-input:hover {
-  background-color: #d3d3d3;
-}
-input {
-  width: 20%;
-  height: 30px;
+  height: 28px;
 }
 </style>
+
